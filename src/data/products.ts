@@ -73,4 +73,76 @@ export const products: Product[] = [
     image: '/revetement.jpg',
     category: 'decoration'
   },
+  {
+    id: '10',
+    name: 'Draps sublimes et douillets',
+    description: '2 deux draps de 3 places,2 taies et deux rideaux',
+    price: 25000,
+    image: '/drap deco1.jpg',
+    category: 'decoration'
+  },
+  {
+    id: '11',
+    name: 'Draps sublimes et douillets',
+    description: '2 deux draps de 3 places,2 taies et deux rideaux',
+    price: 25000,
+    image: '/drap deco2.jpg',
+    category: 'decoration'
+  },
+  {
+    id: '12',
+    name: 'Draps sublimes et douillets',
+    description: '2 deux draps de 3 places,2 taies et deux rideaux',
+    price: 25000,
+    image: '/drap deco3.jpg',
+    category: 'decoration'
+  },
+  {
+    id: '13',
+    name: 'Draps sublimes et douillets',
+    description: '2 deux draps de 3 places,2 taies et deux rideaux',
+    price: 25000,
+    image: '/drap deco4.jpg',
+    category: 'decoration'
+  },
+  {
+    id: '14',
+    name: 'Draps sublimes et douillets',
+    description: '2 deux draps de 3 places,2 taies et deux rideaux',
+    price: 25000,
+    image: '/drap deco5.jpg',
+    category: 'decoration'
+  },
+  {
+    id: '15',
+    name: 'Paire de Draps elegants',
+    description: 'Paire de draps de 3 places',
+    price: 12000,
+    image: '/couverture1.jpg',
+    category: 'chambre'
+  },
+  {
+    id: '16',
+    name: 'Paire de Draps elegants',
+    description: 'Paire de draps de 3 places',
+    price: 12000,
+    image: '/couverture2.jpg',
+    category: 'chambre'
+  },
+  {
+    id: '17',
+    name: 'Paire de Draps elegants',
+    description: 'Paire de draps de 3 places',
+    price: 12000,
+    image: '/couverture3.jpg',
+    category: 'chambre'
+  },
+  {
+    id: '18',
+    name: 'Paire de Draps elegants',
+    description: 'Paire de draps de 3 places',
+    price: 12000,
+    image: '/couverture4.jpg',
+    category: 'chambre'
+  },
 ];
