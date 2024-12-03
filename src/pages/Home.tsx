@@ -9,21 +9,21 @@ const testimonials = [
   {
     name: "Letekou Maureen",
     role: "Décoratrice d'intérieur",
-    image: "./public/team1.jpg",
+    image: "./public/maureen.jpg",
     quote: "Les produits de MachlieEclat ont transformé ma façon de décorer. La qualité est exceptionnelle !",
     rating: 5
   },
   {
     name: "Jean Kouassi",
     role: "Client fidèle",
-    image: "./public/team2.jpg",
+    image: "./public/kouassi.jpg",
     quote: "Le service client est remarquable et les livraisons sont toujours à temps. Je recommande !",
     rating: 5
   },
   {
     name: "Sarah Mengue",
     role: "Architecte",
-    image: "./public/team3.jpg",
+    image: "./public/mengue.jpg",
     quote: "Des articles uniques qui apportent une touche d'élégance à n'importe quel intérieur.",
     rating: 5
   }
