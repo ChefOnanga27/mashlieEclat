@@ -35,7 +35,7 @@ export const products: Product[] = [
   },
   {
     id: '5',
-    name: 'Robe de Soirée en Soie',
+    name: 'Robe stylee',
     description: 'Robe de soirée en soie élégante, parfaite pour des occasions spéciales.',
     price: 12000,
     image: '/robe2.jpg',
@@ -94,7 +94,7 @@ export const products: Product[] = [
     name: 'Draps sublimes et douillets',
     description: '2 deux draps de 3 places,2 taies et deux rideaux',
     price: 25000,
-    image: '/drap deco3.jpg',
+    image: '/drap deco7.jpg',
     category: 'decoration'
   },
   {
@@ -144,5 +144,69 @@ export const products: Product[] = [
     price: 12000,
     image: '/couverture4.jpg',
     category: 'chambre'
+  },
+  {
+    id: '19',
+    name: 'Robe stylee',
+    description: 'Robe ample et élégante, parfaite pour des occasions spéciales.',
+    price: 12000,
+    image: '/robe3.jpg',
+    category: 'Robe'
+  },
+  {
+    id: '20',
+    name: 'Robe stylee',
+    description: 'Robe ample et élégante, parfaite pour des occasions spéciales.',
+    price: 12000,
+    image: '/robe4.jpg',
+    category: 'Robe'
+  },
+  {
+    id: '21',
+    name: 'Robe stylee',
+    description: 'Robe ample et élégante, parfaite pour des occasions spéciales.',
+    price: 12000,
+    image: '/robe5.jpg',
+    category: 'Robe'
+  },
+  {
+    id: '22',
+    name: 'Robe stylee',
+    description: 'Robe ample et élégante, parfaite pour des occasions spéciales.',
+    price: 12000,
+    image: '/robe6.jpg',
+    category: 'Robe'
+  },
+  {
+    id: '23',
+    name: 'Robe stylee',
+    description: 'Robe ample et élégante, parfaite pour des occasions spéciales.',
+    price: 12000,
+    image: '/robe7.jpg',
+    category: 'Robe'
+  },
+  {
+    id: '24',
+    name: 'Rideaux ',
+    description: 'Une variété de rideaux en lot de 3.',
+    price: 15000,
+    image: '/rideau1.jpg',
+    category: 'decoration'
+  },
+  {
+    id: '25',
+    name: 'Rideaux ',
+    description: 'Une variété de rideaux en lot de 3.',
+    price: 15000,
+    image: '/rideau2.jpg',
+    category: 'decoration'
+  },
+  {
+    id: '26',
+    name: 'Rideaux ',
+    description: 'Une variété de rideaux en lot de 3.',
+    price: 15000,
+    image: '/rideau3.jpg',
+    category: 'decoration'
   },
 ];
