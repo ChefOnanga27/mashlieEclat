@@ -48,7 +48,7 @@ export function CategorySection() {
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
             onError={(e) => {
               const img = e.target as HTMLImageElement;
-              img.src = '/public/placeholder.jpg';
+              img.src = '../assets/placeholder.jpg';
             }}
           />
           

@@ -34,7 +34,7 @@ export function About() {
           className="w-full h-full object-cover"
           onError={(e) => {
             const img = e.target as HTMLImageElement;
-            img.src = '/public/drap2.jpg';
+            img.src = '/drap2.jpg';
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-yellow-900/90 to-transparent" />
@@ -102,12 +102,12 @@ export function About() {
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
                 <img
-                  src={`/public/team${member}.jpg`}
+                  src={`/team${member}.jpg`}
                   alt={`Team Member ${member}`}
                   className="w-full h-64 object-cover"
                   onError={(e) => {
                     const img = e.target as HTMLImageElement;
-                    img.src = './public/onanga (2).jpg';
+                    img.src = '/onanga (2).jpg';
                   }}
                 />
                 <div className="p-6">

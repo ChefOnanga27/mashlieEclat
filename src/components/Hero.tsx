@@ -3,17 +3,17 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
   {
-    image: '/public/drap1.jpg',
+    image: '/drap1.jpg',
     title: 'Collection Exclusive',
     description: 'Découvrez nos nouveautés pour sublimer votre intérieur'
   },
   {
-    image: '/public/robe2.jpg',
+    image: '/robe2.jpg',
     title: 'Élégance & Confort',
     description: 'Des produits sélectionnés avec soin pour votre bien-être'
   },
   {
-    image: '/public/image1.jpg',
+    image: '/image1.jpg',
     title: 'Artisanat de Luxe',
     description: 'Le savoir-faire traditionnel rencontre le design moderne'
   }
@@ -52,7 +52,7 @@ export function Hero() {
             className="w-full h-full object-cover"
             onError={(e) => {
               const img = e.target as HTMLImageElement;
-              img.src = '/public/drap2.jpg';
+              img.src = '/drap2.jpg';
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-900/90 to-transparent" />

@@ -9,21 +9,21 @@ const testimonials = [
   {
     name: "Letekou Maureen",
     role: "Décoratrice d'intérieur",
-    image: "./public/maureen.jpg",
+    image: "./maureen.jpg",
     quote: "Les produits de MachlieEclat ont transformé ma façon de décorer. La qualité est exceptionnelle !",
     rating: 5
   },
   {
     name: "Jean Kouassi",
     role: "Client fidèle",
-    image: "./public/kouassi.jpg",
+    image: "/kouassi.jpg",
     quote: "Le service client est remarquable et les livraisons sont toujours à temps. Je recommande !",
     rating: 5
   },
   {
     name: "Sarah Mengue",
     role: "Architecte",
-    image: "./public/mengue.jpg",
+    image: "/mengue.jpg",
     quote: "Des articles uniques qui apportent une touche d'élégance à n'importe quel intérieur.",
     rating: 5
   }
@@ -94,7 +94,7 @@ export function Home() {
                     className="w-16 h-16 rounded-full object-cover mr-4"
                     onError={(e) => {
                       const img = e.target as HTMLImageElement;
-                      img.src = './public/drap2.jpg';
+                      img.src = '/drap2.jpg';
                     }}
                   />
                   <div>
