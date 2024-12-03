@@ -4,7 +4,7 @@ export interface Product {
   description: string;
   price: number;
   image: string;
-  category: 'cuisine' | 'chambre' | 'robes'|'decoration'|'parfum';
+  category: 'cuisine' | 'chambre' | 'robe'|'decoration'|'parfum';
 }
 
 export interface Category {

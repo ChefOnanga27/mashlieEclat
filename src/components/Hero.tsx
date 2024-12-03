@@ -1,59 +1,107 @@
 import { useState, useEffect } from 'react';
-import { ShoppingBag } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const slides = [
+  {
+    image: '/public/drap1.jpg',
+    title: 'Collection Exclusive',
+    description: 'Découvrez nos nouveautés pour sublimer votre intérieur'
+  },
+  {
+    image: '/public/robe2.jpg',
+    title: 'Élégance & Confort',
+    description: 'Des produits sélectionnés avec soin pour votre bien-être'
+  },
+  {
+    image: '/public/image1.jpg',
+    title: 'Artisanat de Luxe',
+    description: 'Le savoir-faire traditionnel rencontre le design moderne'
+  }
+];
 
 export function Hero() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  
-  const images = [
-    {
-      src: "./public/image1.jpg",
-      text: "Équipez votre maison avec style"
-    },
-    {
-      src: "./public/image2.jpg",
-      text: "Des articles de maison pour chaque besoin"
-    },
-    {
-      src: "./public/image 3.jpg",
-      text: "Offrez à votre espace de vie une nouvelle dimension"
-    }
-  ];
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // Change image every 3 seconds
-    return () => clearInterval(interval); 
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
   }, []);
 
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
   return (
-    <div className="relative bg-gradient-to-r from-yellow-700 to-yellow-500 text-white py-16">
-      <div className="container mx-auto px-4">
-        {/* Image Carousel */}
-        <div className="relative h-96 overflow-hidden rounded-lg">
+    <div className="relative h-[70vh] overflow-hidden">
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
           <img
-            src={images[currentIndex].src}
-            alt="Hero Image"
+            src={slide.image}
+            alt={slide.title}
             className="w-full h-full object-cover"
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              img.src = '/public/drap2.jpg';
+            }}
           />
-          <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                {images[currentIndex].text}
-              </h1>
-              <p className="text-xl mb-8 text-purple-100">
-                Découvrez notre collection d'articles de maison élégants et fonctionnels,
-                sélectionnés avec soin pour embellir votre quotidien.
-              </p>
-              <div className="flex items-center gap-4 justify-center">
-                <ShoppingBag size={24} />
-                <span className="text-lg">
-                  Livraison rapide
-                </span>
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-900/90 to-transparent" />
+          
+          <div className="absolute inset-0 flex items-center">
+            <div className="container mx-auto px-4">
+              <div className="max-w-xl">
+                <h1 className="text-5xl font-bold text-white mb-6 transform transition-transform duration-700 translate-y-0">
+                  {slide.title}
+                </h1>
+                <p className="text-xl text-yellow-100 mb-8 transform transition-transform duration-700 delay-100 translate-y-0">
+                  {slide.description}
+                </p>
+                <button className="px-8 py-3 bg-yellow-500 text-white rounded-full font-semibold hover:bg-yellow-400 transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  Découvrir
+                </button>
               </div>
             </div>
           </div>
         </div>
+      ))}
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-yellow-500/80 text-white hover:bg-yellow-400 transition-colors"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-yellow-500/80 text-white hover:bg-yellow-400 transition-colors"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === currentSlide
+                ? 'bg-yellow-500 w-8'
+                : 'bg-white/50 hover:bg-white/80'
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

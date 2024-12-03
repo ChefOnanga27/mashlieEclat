@@ -1,55 +1,87 @@
-
-import { Utensils, Bed, Home, Droplet } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const categories = [
   {
-    id: 'cuisine',
     name: 'Cuisine',
-    description: 'Ustensiles et équipements de cuisine',
-    icon: Utensils
+    image: '/categories/cuisine.jpg',
+    description: 'Accessoires et décorations pour votre cuisine',
+    gradient: 'from-yellow-900/80 to-yellow-800/80'
   },
   {
-    id: 'chambre',
     name: 'Chambre',
-    description: 'Linge de lit et accessoires',
-    icon: Bed
+    image: '/categories/chambre.jpg',
+    description: 'Pour une chambre élégante et confortable',
+    gradient: 'from-yellow-800/80 to-yellow-700/80'
   },
   {
-    id: 'decoration',
+    name: 'Robe',
+    image: '/categories/robe.jpg',
+    description: 'Collection de robes exclusives',
+    gradient: 'from-yellow-700/80 to-yellow-600/80'
+  },
+  {
     name: 'Décoration',
-    description: 'Objets décoratifs et art de vivre',
-    icon: Home
+    image: '/categories/decoration.jpg',
+    description: 'Objets décoratifs pour votre intérieur',
+    gradient: 'from-yellow-600/80 to-yellow-500/80'
   },
   {
-    id: 'parfum',
     name: 'Parfum',
-    description: 'Découvrez nos parfums élégants et intemporels',
-    icon: Droplet
+    image: '/categories/parfum.jpg',
+    description: 'Parfums et senteurs d\'ambiance',
+    gradient: 'from-yellow-500/80 to-yellow-400/80'
   }
-  
 ];
 
 export function CategorySection() {
   return (
-    <section className="py-12 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Nos Catégories</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {categories.map((category) => {
-            const Icon = category.icon;
-            return (
-              <div
-                key={category.id}
-                className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
-              >
-                <Icon className="w-12 h-12 mx-auto mb-4 text-purple-600" />
-                <h3 className="text-xl font-semibold mb-2">{category.name}</h3>
-                <p className="text-gray-600">{category.description}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {categories.map((category) => (
+        <Link
+          key={category.name}
+          to={`/products?category=${category.name.toLowerCase()}`}
+          className="group relative h-64 overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-[1.02]"
+        >
+          <img
+            src={category.image}
+            alt={category.name}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              img.src = '/public/placeholder.jpg';
+            }}
+          />
+          
+          <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} transition-opacity duration-300`} />
+          
+          <div className="absolute inset-0 p-6 flex flex-col justify-end">
+            <h3 className="text-2xl font-bold text-white mb-2">
+              {category.name}
+            </h3>
+            <p className="text-yellow-100 text-sm opacity-90">
+              {category.description}
+            </p>
+            <div className="mt-4">
+              <span className="inline-flex items-center text-yellow-100 text-sm font-medium">
+                Découvrir
+                <svg
+                  className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </Link>
+      ))}
+    </div>
   );
 }
