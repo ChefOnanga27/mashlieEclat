@@ -62,7 +62,7 @@ export const products: Product[] = [
     name: 'Robe Décontractée',
     description: 'Robe légère et respirante, parfaite pour les journées chaudes.',
     price: 12000,
-    image: '/robe1.jpg',
+    image: '/robe3.jpg',
     category: 'Robe'
   },
   {
